@@ -1,7 +1,10 @@
+import { beforeWordOrAfter } from "../beforeWordOrAfter";
+
 export const withNumberOrNot = function (
   number: number,
   word: string,
-  withNumber?: boolean
+  withNumber?: boolean,
+  after?: boolean
 ) {
-  return withNumber ? `${number} ${word}` : word;
+  return withNumber ? beforeWordOrAfter(number, word, after) : word;
 };
