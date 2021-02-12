@@ -3,7 +3,7 @@
 ![npm](https://img.shields.io/npm/v/pluralizer)
 ![npm bundle size](https://img.shields.io/bundlephobia/min/pluralizer)
 
-Choose right plural form for different languages. Was made for Reac native purpose on TypeScript.
+Chooses right plural form for different languages. Was made for React native purpose with TypeScript.
 
 ## Install
 
@@ -22,6 +22,9 @@ import pluralizer from "@kodozorro/pluralizer";
 pluralizer(["Bird", "Birds"], 5, true);
 //=> "5 Birds"
 
+pluralizer(["Bird", "Birds"], 5, true, true);
+//=> "Birds 5"
+
 pluralizer(["Bird", "Birds"], 5);
 //=> "Birds"
 ```
@@ -31,6 +34,8 @@ These tool works with prepared words, it **doesn't generate anything!!**
 ### Prepare your plural forms
 
 You must provide your array of words, whih can be used. Translation of it is your responsibility.
+
+**You must know the plural rule of your language!!!** But, I'll show them further.
 
 For example, if it is word `Bird` that you want to pluralize, than you must have an array like this:
 
