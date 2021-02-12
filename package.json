@@ -5,6 +5,15 @@
   "main": "index.js",
   "author": "Dmitrii Sikorskii",
   "license": "MIT",
+  "repository": "kodozorro/pluralizer",
+  "keywords": [
+    "reactnative",
+    "npm",
+    "package",
+    "plural",
+    "pluralize",
+    "languages"
+  ],
   "dependencies": {
     "react-native-localize": "^2.0.1"
   }
