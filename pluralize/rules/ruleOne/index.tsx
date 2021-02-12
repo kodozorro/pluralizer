@@ -1,6 +1,6 @@
-import { withNumberOrNot } from "../withNumberOrNot";
+import { withNumberOrNot } from "../../withNumberOrNot";
 
-export const pluralizeEnglish = function (
+export const ruleOne = function (
   number: number,
   words: string[],
   withNumber?: boolean,

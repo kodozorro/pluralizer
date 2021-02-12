@@ -1,6 +1,6 @@
 import { getCurrentLocale } from "../getCurrentLocale";
-import { pluralizeEnglish } from "./english";
-import { pluralizeRussian } from "./russian";
+import { ruleOne } from "./rules/ruleOne";
+import { ruleSeven } from "./rules/ruleSeven";
 
 export function chooseLanguageGroup(
   number: number,
@@ -11,10 +11,10 @@ export function chooseLanguageGroup(
   const localeLanguage = getCurrentLocale();
 
   if (localeLanguage === "en") {
-    return pluralizeEnglish(number, words, withNumber, after);
+    return ruleOne(number, words, withNumber, after);
   }
 
   if (localeLanguage === "ru") {
-    return pluralizeRussian(number, words, withNumber, after);
+    return ruleSeven(number, words, withNumber, after);
   }
 }
