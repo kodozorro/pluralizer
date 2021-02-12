@@ -1,10 +1,13 @@
+import { withNumberOrNot } from "../withNumberOrNot";
+
 export const pluralizeEnglish = function (
   number: number,
-  words: string[]
+  words: string[],
+  withNumber?: boolean
 ): string {
   if (number === 1) {
-    return words[0];
+    return withNumberOrNot(number, words[0], withNumber);
   } else {
-    return words[1];
+    return withNumberOrNot(number, words[1], withNumber);
   }
 };
