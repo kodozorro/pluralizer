@@ -1,4 +1,4 @@
-import { beforeWordOrAfter } from "../beforeWordOrAfter";
+import { beforeWordOrAfter } from "./beforeWordOrAfter";
 
 export const withNumberOrNot = function (
   number: number,
