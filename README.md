@@ -6,12 +6,14 @@
 Chooses right plural form for different languages. Was made for React native purpose with TypeScript.
 
 - [@kodozorro/pluralizer](#kodozorropluralizer)
+  - [List of languages it can work with](#list-of-languages-it-can-work-with)
+  - [Why should I use it?](#why-should-i-use-it)
   - [Install](#install)
   - [Usage](#usage)
     - [Prepare your plural forms](#prepare-your-plural-forms)
   - [Function `pluralizer()`](#function-pluralizer)
   - [List of Plural Rules in different language families](#list-of-plural-rules-in-different-language-families)
-    - [Plural rule #0 (1 form)](#plural-rule-0-1-form)
+    - [Plural rule #0 (1 form) Asian, Persian, Turkic/Altaic (Turkish), Thai, Lao](#plural-rule-0-1-form-asian-persian-turkicaltaic-turkish-thai-lao)
     - [Plural rule #1 (2 forms): Germanic, Finno-Ugric, Language isolate, Latin/Greek, Semitic (Hebrew), Romanic, Vietnamese](#plural-rule-1-2-forms-germanic-finno-ugric-language-isolate-latingreek-semitic-hebrew-romanic-vietnamese)
     - [Plural rule #2 (2 forms): Romanic (French, Brazilian Portuguese), Lingala](#plural-rule-2-2-forms-romanic-french-brazilian-portuguese-lingala)
     - [Plural rule #3 (3 forms): Baltic (Latvian, Latgalian)](#plural-rule-3-3-forms-baltic-latvian-latgalian)
@@ -32,9 +34,41 @@ Chooses right plural form for different languages. Was made for React native pur
     - [Plural rule #18 (6 forms): Welsh](#plural-rule-18-6-forms-welsh)
     - [Plural rule #19 (3 forms): Slavic (Bosnian, Croatian, Serbian)](#plural-rule-19-3-forms-slavic-bosnian-croatian-serbian)
 
+## List of languages it can work with
+
+- Asian, Persian, Turkic/Altaic (Turkish), Thai, Lao
+- Germanic, Finno-Ugric, Language isolate, Latin/Greek, Semitic (Hebrew), Romanic, Vietnamese
+- Romanic (French, Brazilian Portuguese), Lingala
+- Baltic (Latvian, Latgalian)
+- Celtic (Scottish Gaelic)
+- Romanic (Romanian)
+- Baltic (Lithuanian)
+- Belarusian, Russian, Ukrainian
+- Slavic (Slovak, Czech)
+- Slavic (Polish)
+- Slavic (Slovenian, Sorbian)
+- Celtic (Irish Gaelic)
+- Semitic (Arabic)
+- Semitic (Maltese)
+- Icelandic, Macedonian
+- Celtic (Breton)
+- Ecuador indigenous languages (Shuar)
+- Welsh
+- Slavic (Bosnian, Croatian, Serbian)
+
+## Why should I use it?
+
+Well, let me try to explain.
+
+Imagine you need to make dynamic forms of ome words in your app. With i18n, for more than one language. If it's Germanic language family, it'll be easy because they have 2 plural forms just.
+But if it's [Russian](#plural-rule-7-3-forms-belarusian-russian-ukrainian)? With 3 forms and some exceptions?
+Or even [Semitic (Arabic)](#plural-rule-12-6-forms-semitic-arabic)? With 6 forms and exceptions also? And you need to make a lot of translation work with plural forms, understand how to manage with words depending on number if it's dynamic.
+
+This small tool can do it for you.
+
 ## Install
 
-This package uses `react-native-localize` to get current phone locale, works on Android and IPhones. So, please install it too.
+This package uses `react-native-localize` to get current locale on phone. It works both on Android and IPhones. So, please install it too.
 
 ```
 $ npm install @kodozorro/pluralizer
@@ -46,21 +80,21 @@ $ npm install react-native-localize
 ```ts
 import pluralizer from "@kodozorro/pluralizer";
 
+pluralizer(["Bird", "Birds"], 5);
+//=> "Birds"
+
 pluralizer(["Bird", "Birds"], 5, true);
 //=> "5 Birds"
 
 pluralizer(["Bird", "Birds"], 5, true, true);
 //=> "Birds 5"
-
-pluralizer(["Bird", "Birds"], 5);
-//=> "Birds"
 ```
 
-These tool works with prepared words, it **doesn't generate anything!!**
+This tool works with prepared words, it **doesn't generate anything!!**
 
 ### Prepare your plural forms
 
-You must provide your array of words, which can be used. Translation of it is your responsibility.
+You must provide your array of words, which can be used. Translation of that is your responsibility.
 
 **You must know the plural rule of your language!!** But, I'll show them [further](#list-of-plural-rules).
 
@@ -102,7 +136,7 @@ if you want to return string with a number than add third boolean argument true.
 
 [Provided by MDN](https://developer.mozilla.org/en-US/docs/Mozilla/Localization/Localization_and_Plurals#list_of_plural_rules)
 
-### Plural rule #0 (1 form)
+### Plural rule #0 (1 form) Asian, Persian, Turkic/Altaic (Turkish), Thai, Lao
 
 **Families**: _Asian (Chinese, Japanese, Korean), Persian, Turkic/Altaic (Turkish), Thai, Lao_
 
