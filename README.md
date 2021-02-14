@@ -1,7 +1,7 @@
 # @kodozorro/pluralizer
 
-![npm](https://img.shields.io/npm/v/pluralizer)
-![npm bundle size](https://img.shields.io/bundlephobia/min/pluralizer)
+![npm](https://img.shields.io/npm/v/@kodozorro/pluralizer)
+![gitHub](https://img.shields.io/github/package-json/v/kodozorro/pluralizer)
 
 Chooses right plural form for different languages. Was made for React native purpose with TypeScript.
 
