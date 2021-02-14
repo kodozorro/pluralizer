@@ -5,6 +5,6 @@ export const withNumberOrNot = function (
   word: string,
   withNumber?: boolean,
   after?: boolean
-) {
+): string | undefined {
   return withNumber ? beforeWordOrAfter(number, word, after) : word;
 };

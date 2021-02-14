@@ -1,19 +1,20 @@
 import { withNumberOrNot } from "../../withNumberOrNot";
 
-export const ruleSeven = function (
+export const ruleEleventh = function (
   number: number,
   words: string[],
   withNumber?: boolean,
   after?: boolean
 ): string {
-  const lastDigit = Number(number.toString().slice(-1));
-  if (lastDigit === 1 && number !== 11) {
+  if (number === 1) {
     return withNumberOrNot(number, words[0], withNumber, after);
-  } else if (lastDigit >= 2 && lastDigit <= 4 && (number < 12 || number > 14)) {
+  } else if (number === 2) {
     return withNumberOrNot(number, words[1], withNumber, after);
-  } else if (Number.isInteger(number)) {
+  } else if (number >= 3 && number <= 6) {
     return withNumberOrNot(number, words[2], withNumber, after);
+  } else if (number >= 6 && number <= 10) {
+    return withNumberOrNot(number, words[3], withNumber, after);
   } else {
-    return withNumberOrNot(number, words[1], withNumber, after);
+    return withNumberOrNot(number, words[4], withNumber, after);
   }
 };

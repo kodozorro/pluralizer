@@ -15,8 +15,8 @@ Chooses right plural form for different languages. Was made for React native pur
   - [List of Plural Rules in different language families](#list-of-plural-rules-in-different-language-families)
     - [Plural rule #0 (1 form) Asian, Persian, Turkic/Altaic (Turkish), Thai, Lao](#plural-rule-0-1-form-asian-persian-turkicaltaic-turkish-thai-lao)
     - [Plural rule #1 (2 forms): Germanic, Finno-Ugric, Language isolate, Latin/Greek, Semitic (Hebrew), Romanic, Vietnamese](#plural-rule-1-2-forms-germanic-finno-ugric-language-isolate-latingreek-semitic-hebrew-romanic-vietnamese)
-    - [Plural rule #2 (2 forms): Romanic (French, Brazilian Portuguese), Lingala](#plural-rule-2-2-forms-romanic-french-brazilian-portuguese-lingala)
-    - [Plural rule #3 (3 forms): Baltic (Latvian, Latgalian)](#plural-rule-3-3-forms-baltic-latvian-latgalian)
+    - [Plural rule #2 (2 forms): Romanic (French, Brazilian Portuguese),](#plural-rule-2-2-forms-romanic-french-brazilian-portuguese)
+    - [Plural rule #3 (3 forms): Baltic (Latvian)](#plural-rule-3-3-forms-baltic-latvian)
     - [Plural rule #4 (4 forms): Celtic (Scottish Gaelic)](#plural-rule-4-4-forms-celtic-scottish-gaelic)
     - [Plural rule #5 (3 forms): Romanic (Romanian)](#plural-rule-5-3-forms-romanic-romanian)
     - [Plural rule #6 (3 forms): Baltic (Lithuanian)](#plural-rule-6-3-forms-baltic-lithuanian)
@@ -38,8 +38,8 @@ Chooses right plural form for different languages. Was made for React native pur
 
 - Asian, Persian, Turkic/Altaic (Turkish), Thai, Lao
 - Germanic, Finno-Ugric, Language isolate, Latin/Greek, Semitic (Hebrew), Romanic, Vietnamese
-- Romanic (French, Brazilian Portuguese), Lingala
-- Baltic (Latvian, Latgalian)
+- Romanic (French, Brazilian Portuguese)
+- Baltic (Latvian)
 - Celtic (Scottish Gaelic)
 - Romanic (Romanian)
 - Baltic (Lithuanian)
@@ -51,8 +51,6 @@ Chooses right plural form for different languages. Was made for React native pur
 - Semitic (Arabic)
 - Semitic (Maltese)
 - Icelandic, Macedonian
-- Celtic (Breton)
-- Ecuador indigenous languages (Shuar)
 - Welsh
 - Slavic (Bosnian, Croatian, Serbian)
 
@@ -87,6 +85,10 @@ pluralizer(["Bird", "Birds"], 5, true);
 //=> "5 Birds"
 
 pluralizer(["Bird", "Birds"], 5, true, true);
+//=> "Birds 5"
+
+// If you have already your locale language code.
+pluralizer(["Bird", "Birds"], 5, true, true, "en");
 //=> "Birds 5"
 ```
 
@@ -149,16 +151,16 @@ if you want to return string with a number than add third boolean argument true.
 - is 1: `1`
 - everything else: `0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, …`
 
-### Plural rule #2 (2 forms): Romanic (French, Brazilian Portuguese), Lingala
+### Plural rule #2 (2 forms): Romanic (French, Brazilian Portuguese),
 
-**Families**: _Romanic (French, Brazilian Portuguese), Lingala_
+**Families**: _Romanic (French, Brazilian Portuguese)_
 
 - is 0 or 1: `0, 1`
 - everything else: `2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, …`
 
-### Plural rule #3 (3 forms): Baltic (Latvian, Latgalian)
+### Plural rule #3 (3 forms): Baltic (Latvian)
 
-**Families**: _Baltic (Latvian, Latgalian)_
+**Families**: _Baltic (Latvian)_
 
 - ends in 0: `0`
 - ends in 1, excluding 11: `1, 21, 31, 41, 51, 61, 71, 81, 91, 101, 121, 131, 141, 151, 161, 171, 181, 191, 201, 221, 231, 241, 251, 261, 271, 281, 291, …`
