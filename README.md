@@ -11,7 +11,6 @@ Chooses right plural form for different languages. Was made for React native pur
   - [Install](#install)
   - [Usage](#usage)
     - [Prepare your plural forms](#prepare-your-plural-forms)
-  - [Function `pluralizer()`](#function-pluralizer)
   - [List of Plural Rules in different language families](#list-of-plural-rules-in-different-language-families)
     - [Plural rule #0 (1 form) Asian, Persian, Turkic/Altaic (Turkish), Thai, Lao](#plural-rule-0-1-form-asian-persian-turkicaltaic-turkish-thai-lao)
     - [Plural rule #1 (2 forms): Germanic, Finno-Ugric, Language isolate, Latin/Greek, Semitic (Hebrew), Romanic, Vietnamese](#plural-rule-1-2-forms-germanic-finno-ugric-language-isolate-latingreek-semitic-hebrew-romanic-vietnamese)
@@ -75,24 +74,59 @@ $ npm install react-native-localize
 
 ## Usage
 
+This tool works with prepared words, it **doesn't generate anything!!**
+
 ```ts
 import pluralizer from "@kodozorro/pluralizer";
 
-pluralizer(["Bird", "Birds"], 5);
+/**
+ * @param {number}  number - A number, which is used for plural or singular form.
+ * @param {string[]} words - An array of words, which you want to be pluralized.
+ * @param {boolean} [withNumber] - optional param, if true retuns string with a number before word.
+ * @param {boolean} [after] - optional param, if true returns string with a number after word.
+ * @param {string} [locale] - optional param, if you hve ready locale code, you can pass it.
+ * @returns {string} This is the result word with needed plural or singular form.
+ */
+
+// Provide array of words with all plural forms in right order.
+
+<Text>{'Some text that includes dynamic number of birds.'}</Text>
+<Text>{'I have' + number + pluralizer(number, ["Bird", "Birds"])}</Text>
+//=> "I have 5 Birds"
+
+<Text>{'Какой-то текст с динамическим изменением числа чего-то или кого-то.'}</Text>
+<Text>{'У меня в квартире живёт' + number + pluralizer(number, ["Синица", "Синицы", "Синиц"])}</Text>
+//=> "У меня в квартире живёт 5 Синиц"
+
+
+// Simplest example.
+pluralizer(5, ["Bird", "Birds"]);
 //=> "Birds"
 
-pluralizer(["Bird", "Birds"], 5, true);
-//=> "5 Birds"
+pluralizer(5, ["Синица", "Синицы", "Синиц"]);
+//=> "Синиц"
 
-pluralizer(["Bird", "Birds"], 5, true, true);
-//=> "Birds 5"
+// Example that returns also a number not only string
+pluralizer(3, ["Bird", "Birds"], true);
+//=> "3 Birds"
+
+pluralizer(3, ["Синица", "Синицы", "Синиц"], true);
+//=> "3 Синицы"
+
+// Number after word
+pluralizer(1, ["Bird", "Birds"], true, true);
+//=> "Bird 1"
+
+pluralizer(1, ["Синица", "Синицы", "Синиц"], true, true);
+//=> "Синица 1"
 
 // If you have already your locale language code.
-pluralizer(["Bird", "Birds"], 5, true, true, "en");
-//=> "Birds 5"
-```
+pluralizer(0, ["Bird", "Birds"], true, true, "en");
+//=> "Birds 0"
 
-This tool works with prepared words, it **doesn't generate anything!!**
+pluralizer(0, ["Синица", "Синицы", "Синиц"], true, true, "en");
+//=> "Синиц 0"
+```
 
 ### Prepare your plural forms
 
@@ -117,22 +151,6 @@ If it is Russian language, than array of three words:
 ```
 
 Due to three plural forms in these language.
-
-## Function `pluralizer()`
-
-It takes three arguments:
-
-```ts
-["Bird", "Birds"];
-```
-
-A number which you want to use with this word
-
-```ts
-5;
-```
-
-if you want to return string with a number than add third boolean argument true.
 
 ## List of Plural Rules in different language families
 
