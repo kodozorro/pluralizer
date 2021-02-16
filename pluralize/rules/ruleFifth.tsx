@@ -1,4 +1,4 @@
-import { withNumberOrNot } from "../../withNumberOrNot";
+import { withNumberOrNot } from "../withNumberOrNot";
 
 export const ruleFifth = function (
   number: number,
