@@ -1,6 +1,6 @@
 {
   "name": "@kodozorro/pluralizer",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "Chooses right plural form for different languages. Was made for React native purpose on TypeScript.",
   "main": "index.tsx",
   "author": "Dmitrii Sikorskii",
