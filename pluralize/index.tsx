@@ -95,7 +95,7 @@ export function chooseLanguageGroup(
     sr: ruleNinteenth(number, words, withNumber, after),
   };
 
-  let result = rules[localeLanguage](number, words, withNumber, after);
+  let result = rules[localeLanguage];
 
   return result
     ? result
