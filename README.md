@@ -77,7 +77,7 @@ $ npm install react-native-localize
 This tool works with prepared words, it **doesn't generate anything!!**
 
 ```ts
-import pluralizer from "@kodozorro/pluralizer";
+import pluralize from "@kodozorro/pluralizer";
 
 /**
  * @param {number}  number - A number, which is used for plural or singular form.
@@ -91,40 +91,40 @@ import pluralizer from "@kodozorro/pluralizer";
 // Provide array of words with all plural forms in right order.
 
 <Text>{'Some text that includes dynamic number of birds.'}</Text>
-<Text>{'I have' + number + pluralizer(number, ["Bird", "Birds"])}</Text>
+<Text>{'I have' + number + pluralize(number, ["Bird", "Birds"])}</Text>
 //=> "I have 5 Birds"
 
 <Text>{'Какой-то текст с динамическим изменением числа чего-то или кого-то.'}</Text>
-<Text>{'У меня в квартире живёт' + number + pluralizer(number, ["Синица", "Синицы", "Синиц"])}</Text>
+<Text>{'У меня в квартире живёт' + number + pluralize(number, ["Синица", "Синицы", "Синиц"])}</Text>
 //=> "У меня в квартире живёт 5 Синиц"
 
 
 // Simplest example.
-pluralizer(5, ["Bird", "Birds"]);
+pluralize(5, ["Bird", "Birds"]);
 //=> "Birds"
 
-pluralizer(5, ["Синица", "Синицы", "Синиц"]);
+pluralize(5, ["Синица", "Синицы", "Синиц"]);
 //=> "Синиц"
 
 // Example that returns also a number not only string
-pluralizer(3, ["Bird", "Birds"], true);
+pluralize(3, ["Bird", "Birds"], true);
 //=> "3 Birds"
 
-pluralizer(3, ["Синица", "Синицы", "Синиц"], true);
+pluralize(3, ["Синица", "Синицы", "Синиц"], true);
 //=> "3 Синицы"
 
 // Number after word
-pluralizer(1, ["Bird", "Birds"], true, true);
+pluralize(1, ["Bird", "Birds"], true, true);
 //=> "Bird 1"
 
-pluralizer(1, ["Синица", "Синицы", "Синиц"], true, true);
+pluralize(1, ["Синица", "Синицы", "Синиц"], true, true);
 //=> "Синица 1"
 
 // If you have already your locale language code.
-pluralizer(0, ["Bird", "Birds"], true, true, "en");
+pluralize(0, ["Bird", "Birds"], true, true, "en");
 //=> "Birds 0"
 
-pluralizer(0, ["Синица", "Синицы", "Синиц"], true, true, "en");
+pluralize(0, ["Синица", "Синицы", "Синиц"], true, true, "en");
 //=> "Синиц 0"
 ```
 
